@@ -27,7 +27,7 @@ async def CC(ctx, arg):
             db.put({"user": str(ctx.message.mentions[0].id),
                    "points": 0, "key": str(ctx.message.mentions[0].id)})
 
-        db.update({"points": db.util.increment(int(arg))},
+        db.update({"points": db.util.increment(float(arg))},
                   str(ctx.message.mentions[0].id))
 
         # send a message to the channel
